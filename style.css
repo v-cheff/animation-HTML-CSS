@@ -1,0 +1,188 @@
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/*Module-1*/
+
+.mod-1 {
+		margin: 30px;
+		text-align: center;
+		height: 400px;
+		background-color: #F5F5F5;
+	}
+
+.watch {
+	display: inline-block;
+	position: relative;
+	margin: 40px;
+	width: 300px;
+	height: 300px;
+	border: 5px solid #0FB29E;
+	border-radius: 50%;
+}
+.center {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: -10px;
+	margin-left: -10px;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: #0FB29E;
+}
+
+@keyframes cycle {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.second {
+	position: absolute;
+	width: 2px;
+	height: 120px;
+	left: 50%;
+	top: 50%;
+	margin-left: -1px;
+	margin-top: -120px;
+	transform-origin: 50% 100%;
+	background-color: #0FD1B8;
+	animation: cycle 60s steps(60) infinite;
+}
+.minute {
+	position: absolute;
+	width: 4px;
+	height: 100px;
+	left: 50%;
+	top: 50%;
+	margin-left: -2px;
+	margin-top: -100px;
+	transform-origin: 50% 100%;
+	background-color: #13C2AC;
+	animation: cycle 3600s linear infinite;
+}
+.hour {
+	position: absolute;
+	width: 6px;
+	height: 70px;
+	left: 50%;
+	top: 50%;
+	margin-left: -3px;
+	margin-top: -70px;
+	transform-origin: 50% 100%;
+	background-color: #0FB29E;
+	animation: cycle 43200s linear infinite;
+}
+
+
+/*Module-2*/
+
+.mod-2 {
+	margin: 30px;
+	background-color: #F5F5F5;
+	text-align: center;
+}
+.gates {
+	margin: 30px;
+	display: inline-block;
+}
+
+.door {
+	display: inline-block;
+	width: 400px;
+	height: 400px;
+	background-color: #872D62;
+	border: 5px solid #651142;
+}
+ .two {
+ 	margin-left: -5px;
+ 	transform-origin: 100% 50%;
+ }
+
+.one {
+	transform-origin: 0 50%;
+}
+
+@keyframes door-one {
+	from {
+		transform: none;
+	}
+	to {
+		transform: perspective(100px) rotateY(15deg);
+	}
+}
+@keyframes door-two {
+	from {
+		transform: none;
+	}
+	to {
+		transform: perspective(100px) rotateY(-15deg);
+	}
+}
+
+.gates:hover .one {
+	animation-name: door-one;
+	animation-duration: 2s;
+}
+.gates:hover .two {
+	animation-name: door-two;
+	animation-duration: 2s;
+}
+
+
+/*Module-3*/
+
+.mod-3 {
+	margin: 0 auto;
+	padding: 30px 0;
+	width: 800px;
+}
+
+.mod-3 div {
+	height: 200px;
+}
+.text-wrap {
+	display: inline-block;
+	float: left;
+	width: 50%;
+	text-align: center;
+	background-color: #F5F5F5;
+}
+
+.text-wrap p {
+	margin-top: 22%;
+	font-size: 30px;
+	font-family: sans-serif;
+}
+
+.img-wrap {
+	display: inline-block;
+	width: 50%;
+	float: left;
+	overflow: hidden;
+}
+.img-wrap img {
+	transition: 1s;
+}
+.row:hover img {
+	transform: scale(1.5);
+}
+.row:hover {
+	background-color: #7A7A7A;
+}
+.row:hover .blackout {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.blackout {
+	position: absolute;
+	width: 800px;
+	height: 200px;
+	transition: 0.3s;
+}
